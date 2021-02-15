@@ -1,0 +1,17 @@
+echo enter any character 
+read char
+
+case $char in
+
+[a-z]) echo you entered a small case character
+;;
+[A-Z]) echo you entered a Capital letter
+;;
+[0-9]) echo you entered a digit
+;;
+?) echo you entered a special symbol
+;;
+*)echo you entered more than one character
+;;
+
+esac

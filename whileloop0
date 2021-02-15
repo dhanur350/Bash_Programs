@@ -1,0 +1,15 @@
+i=1 j=1
+while [ $i -le 200 ]
+do 
+  while [ $j -lt 200 ]
+  do
+    if [ $j -eq 150 ]
+    then
+    break
+    else
+    echo $i $j
+    fi
+j=`expr $j + 1`
+done
+i=`expr $i + 1`
+done

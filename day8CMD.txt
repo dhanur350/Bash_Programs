@@ -1,0 +1,195 @@
+dhanur@dk0052tx:~$ sh test21
+Enter marks in five subjects 40 50 60 70 80
+60
+first division
+second division
+third division
+fail
+dhanur@dk0052tx:~$ cat > test23
+echo "Enter marks in five subjects \c"
+read m1 m2 m3 m4 m5
+per=`expr \( $m1 + $m2 + $m3 + $m4 + $m5 \) / 5` 
+echo $per
+
+if [ $per -ge 60 ]
+then 
+echo first division
+fi
+
+if [ $per>=50 -a $per<60 ] then 
+echo "second division"
+fi
+
+if [ $per>=40 -a $per<50 ] then 
+echo third division
+fi
+
+if [ $per<40 ] then
+echo fail
+fi
+dhanur@dk0052tx:~$ chmod 775 test23
+dhanur@dk0052tx:~$ vi test23
+dhanur@dk0052tx:~$ sh test23
+Enter marks in five subjects 30 40 50 50 60
+46
+first division
+test23: 13: Syntax error: "fi" unexpected (expecting "then")
+dhanur@dk0052tx:~$ vi test23
+dhanur@dk0052tx:~$ sh test23
+Enter marks in five subjects 40 40 40 50 60
+46
+first division
+test23: 11: cannot open 60: No such file
+test23: 18: Syntax error: "fi" unexpected (expecting "then")
+dhanur@dk0052tx:~$ vi test23
+dhanur@dk0052tx:~$ sh test23
+Enter marks in five subjects 30 30 40 50 60
+42
+first divisiO:
+test23: 11: cannot open 60: No such file
+test23: 18: Syntax error: "fi" unexpected (expecting "then")
+dhanur@dk0052tx:~$ vi test23
+dhanur@dk0052tx:~$ cat test22
+echo "Enter the five subject marks for the student"
+read m1 m2 m3 m4 m5
+sum1=`expr $m1 + $m2 + $m3 + $m4 + $m5`
+echo "Sum of 5 subjects are: " $sum1
+per=`expr $sum1 / 5`
+echo " Percentage: " $per
+
+if [ "$per" -ge 60 ]
+then
+echo "You get Distinction”
+
+elif [ "$per" -ge 50 ]
+then
+echo “You get First class”
+
+elif [ "$per" -ge  40 ]
+then
+echo "You get Second class"
+
+else
+     "echo You get Fail"
+fi
+dhanur@dk0052tx:~$ cat > test24
+echo "Enter any file name \c"
+read fname
+if [ ! -z "$fname" ]
+then
+   if [ -r $fname -a -w $fname -a -x $fname ]
+then 
+echo you have a read, write and execute permission to $fname
+else
+echo read , write and execute permissions denied
+fi
+echo improper file name
+fi
+dhanur@dk0052tx:~$ chmod 775 test24
+dhanur@dk0052tx:~$ sh test24
+Enter any file name test23
+you have a read, write and execute permission to test23
+improper file name
+dhanur@dk0052tx:~$ vi test24
+dhanur@dk0052tx:~$ vi test24
+dhanur@dk0052tx:~$ sh test24
+Enter any file name test24
+you have a read, write and execute permission to test24
+improper file name
+dhanur@dk0052tx:~$ sh test24
+Enter any file name abc
+read , write and execute permissions denied
+improper file name
+dhanur@dk0052tx:~$ vi test24
+dhanur@dk0052tx:~$ sh test24
+Enter any file name test23
+you have a read, write and execute permission to test23
+dhanur@dk0052tx:~$ sh test24
+Enter any file name abc
+read , write and execute permissions denied
+dhanur@dk0052tx:~$ chmod 400 abc
+dhanur@dk0052tx:~$ sh test24
+Enter any file name abc
+read , write and execute permissions denied
+dhanur@dk0052tx:~$ cat > test25
+echo "Enter number from 1 to 3: \c"
+read num
+case $num in
+1) echo you entered 1
+;;
+2) echo you entered 2
+;;
+3) echo you entered 3
+;;
+*) echo I said 1 to 3!
+;;
+esac
+dhanur@dk0052tx:~$ chmod 775 test25
+dhanur@dk0052tx:~$ sh test25
+Enter number from 1 to 3: 2
+you entered 2
+dhanur@dk0052tx:~$ sh test25
+Enter number from 1 to 3: 4
+I said 1 to 3!
+dhanur@dk0052tx:~$ sh test25
+Enter number from 1 to 3: 1
+you entered 1
+dhanur@dk0052tx:~$ sh test25
+Enter number from 1 to 3: 3
+you entered 3
+dhanur@dk0052tx:~$ sh test25
+Enter number from 1 to 3: 4
+I said 1 to 3!
+dhanur@dk0052tx:~$ sh test25
+Enter number from 1 to 3: R
+I said 1 to 3!
+dhanur@dk0052tx:~$ cat > test26
+echo "Enter any number : \c"
+read num
+case $num in
+121) echo I am in Case 121
+;;
+7) echo I am in case 7
+;;
+22) echo I am in case 22
+;;
+*) echo I am in default 
+;;
+esac
+dhanur@dk0052tx:~$ chmod 775 test26
+dhanur@dk0052tx:~$ sh test26
+Enter any number : 12
+I am in default
+dhanur@dk0052tx:~$ sh test26
+Enter any number : 121
+I am in Case 121
+dhanur@dk0052tx:~$ sh test26
+Enter any number : 7
+I am in case 7
+dhanur@dk0052tx:~$ sh test26
+Enter any number : 8
+I am in default
+dhanur@dk0052tx:~$ cat test27
+cat: test27: No such file or directory
+dhanur@dk0052tx:~$ cat > test27
+case $1 in
+cat) echo you supplied cat at command line 
+;;
+dog) echo you supplied dog at command line 
+;;
+parrot) echo you have supplied parrot at command line 
+;;
+*) echo you supplied and incorrect argument at command line 
+;;
+esac
+dhanur@dk0052tx:~$ chmod 775 test27
+dhanur@dk0052tx:~$ sh test27
+you supplied and incorrect argument at command line
+dhanur@dk0052tx:~$ sh test27 cat
+you supplied cat at command line
+dhanur@dk0052tx:~$ sh test27 dog
+you supplied dog at command line
+dhanur@dk0052tx:~$ sh test27 mouse
+you supplied and incorrect argument at command line
+dhanur@dk0052tx:~$ 
+

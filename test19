@@ -1,0 +1,13 @@
+echo enter either 1 or 2
+read i
+if [ $i -eq 1 ]
+then
+echo you would go to heaven
+else
+if [ $i -eq 2 ]
+then
+echo hell was created in mind
+else
+echo how about earth
+fi
+fi

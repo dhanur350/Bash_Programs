@@ -1,0 +1,20 @@
+echo enter the adapter name 
+read adapter
+
+if [ "$adapter" = MA ]
+then
+     echo you have monochrome adapter
+else
+    if [ "$adapter" = CGA ]
+    then
+    echo you have a colored graphics adapter
+    else
+        if [ "$adapter" = VGA ]
+        then
+        echo you have videographics adapter
+        else
+        echo you have super video graphics adapter
+        fi
+      fi
+   fi
+

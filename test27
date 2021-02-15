@@ -1,0 +1,10 @@
+case $1 in
+cat) echo you supplied cat at command line 
+;;
+dog) echo you supplied dog at command line 
+;;
+parrot) echo you have supplied parrot at command line 
+;;
+*) echo you supplied and incorrect argument at command line 
+;;
+esac

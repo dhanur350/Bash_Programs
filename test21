@@ -1,0 +1,22 @@
+echo "Enter marks in five subjects \c"
+read m1 m2 m3 m4 m5
+per=`expr \( $m1 + $m2 + $m3 + $m4 + $m5 \) / 5` 
+echo $per
+
+if [ "$per" -ge 60 ];
+then 
+echo "first division"
+fi
+
+if [ "$per">=50 -a "$per<60" ]; then 
+echo "second division"
+fi
+
+if [ "$per>=40" -a "$per<50" ]; then 
+echo "third division"
+fi
+
+if [ "$per<40" ]; then
+echo "fail"
+fi
+

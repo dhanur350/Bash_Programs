@@ -1,0 +1,4 @@
+:`this is test4
+this is 2nd line`
+a="variable"
+echo $a
