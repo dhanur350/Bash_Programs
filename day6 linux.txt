@@ -1,0 +1,187 @@
+dhanur@dk0052tx:~$ cat test1
+echo "Hello My Dear Students"
+dhanur@dk0052tx:~$ cat >> test1
+echo "printing text line with new line"
+echo -n "printing text without new line"
+echo -e "\n removing \t backslash"
+dhanur@dk0052tx:~$ cat test1
+echo "Hello My Dear Students"
+echo "printing text line with new line"
+echo -n "printing text without new line"
+echo -e "\n removing \t backslash"
+dhanur@dk0052tx:~$ sh test1
+Hello My Dear Students
+printing text line with new line
+printing text without new line-e 
+ removing 	 backslash
+dhanur@dk0052tx:~$ cat >> test2
+# /bin/bash
+# Add two numeric value
+((sum=25+35))
+#print the result
+echo $sum
+dhanur@dk0052tx:~$ ls -l test2
+-rw-rw-r-- 1 dhanur dhanur 78 Jan 18 12:49 test2
+dhanur@dk0052tx:~$ chmod 775 test2
+dhanur@dk0052tx:~$ ls -l test2
+-rwxrwxr-x 1 dhanur dhanur 78 Jan 18 12:49 test2
+dhanur@dk0052tx:~$ sh test2
+
+dhanur@dk0052tx:~$ vi test2
+dhanur@dk0052tx:~$ sh test2
+sum: '=': No such file or directory
+sum: 25: No such file or directory
+sum: +: No such file or directory
+sum: 35: No such file or directory
+
+dhanur@dk0052tx:~$ vi test2
+dhanur@dk0052tx:~$ sh test2
+sum: '=': No such file or directory
+sum: 25: No such file or directory
+sum: +: No such file or directory
+sum: 35: No such file or directory
+
+dhanur@dk0052tx:~$ vi test2
+dhanur@dk0052tx:~$ sh test2
+sum: '=': No such file or directory
+sum: 25: No such file or directory
+sum: +: No such file or directory
+sum: 35: No such file or directory
+
+dhanur@dk0052tx:~$ cat >> test3
+cat > abd
+cp abd abd1
+ls -l a*
+dhanur@dk0052tx:~$ ls -l test3
+-rw-rw-r-- 1 dhanur dhanur 31 Jan 18 13:04 test3
+dhanur@dk0052tx:~$ chmod 775 test3
+dhanur@dk0052tx:~$ ls -l test3
+-rwxrwxr-x 1 dhanur dhanur 31 Jan 18 13:04 test3
+dhanur@dk0052tx:~$ sh test3
+
+this is commandprogram
+one is program line 
+other is execution
+-rw-rw-r-- 1 dhanur dhanur  307 Jan 15 10:43 ab
+-rw-rw-r-- 1 dhanur dhanur 3633 Jan 15 10:35 abc
+-rw-rw-r-- 1 dhanur dhanur   64 Jan 18 13:06 abd
+-rw-rw-r-- 1 dhanur dhanur   64 Jan 18 13:06 abd1
+-rw-rw-r-- 1 dhanur dhanur   43 Jan  9 10:28 ad
+
+aa:
+total 16
+-rw-rw-r-- 1 dhanur dhanur 190 Jan  5 15:47 mint
+-rw-rw-r-- 1 dhanur dhanur  38 Jan  5 15:57 mint1
+-rw-rw-r-- 1 dhanur dhanur 228 Jan  5 16:01 mint2
+-rw-rw-r-- 1 dhanur dhanur 190 Jan  5 15:55 result
+dhanur@dk0052tx:~$ vi test3
+dhanur@dk0052tx:~$ sh test3
+enter the contents of the file
+this is print line
+other is ls command
+-rw-rw-r-- 1 dhanur dhanur  307 Jan 15 10:43 ab
+-rw-rw-r-- 1 dhanur dhanur 3633 Jan 15 10:35 abc
+-rw-rw-r-- 1 dhanur dhanur   39 Jan 18 13:09 abd
+-rw-rw-r-- 1 dhanur dhanur   39 Jan 18 13:09 abd1
+-rw-rw-r-- 1 dhanur dhanur   43 Jan  9 10:28 ad
+
+aa:
+total 16
+-rw-rw-r-- 1 dhanur dhanur 190 Jan  5 15:47 mint
+-rw-rw-r-- 1 dhanur dhanur  38 Jan  5 15:57 mint1
+-rw-rw-r-- 1 dhanur dhanur 228 Jan  5 16:01 mint2
+-rw-rw-r-- 1 dhanur dhanur 190 Jan  5 15:55 result
+dhanur@dk0052tx:~$ sh test2
+sum: '=': No such file or directory
+sum: 25: No such file or directory
+sum: +: No such file or directory
+sum: 35: No such file or directory
+
+dhanur@dk0052tx:~$ cat >> test2
+echo "what is your name?"
+read name
+echo "How do you do , $name?"
+read remark
+echo "I am $remark too!"
+dhanur@dk0052tx:~$ cat test2
+# /bin/bash
+# Add two numeric value
+(( sum = 25 + 35 ))
+#print the result
+echo $sum
+echo "what is your name?"
+read name
+echo "How do you do , $name?"
+read remark
+echo "I am $remark too!"
+dhanur@dk0052tx:~$ cat > test2
+echo "what is your name?"
+read name
+echo "How do you do , $name?"
+read remark
+echo "I am $remark too!"
+dhanur@dk0052tx:~$ cat test2
+echo "what is your name?"
+read name
+echo "How do you do , $name?"
+read remark
+echo "I am $remark too!"
+dhanur@dk0052tx:~$ sh test2
+what is your name?
+Dhanur
+How do you do , Dhanur?
+Fine
+I am Fine too!
+dhanur@dk0052tx:~$ cat >> test2
+a ="this is first "
+echo $a
+dhanur@dk0052tx:~$ sh test2
+what is your name?
+dhanur
+How do you do , dhanur?
+fine
+I am fine too!
+test2: 6: a: not found
+
+dhanur@dk0052tx:~$ vi test2
+dhanur@dk0052tx:~$ sh test2
+what is your name?
+dhanur
+How do you do , dhanur?
+fine
+I am fine too!
+this is first
+dhanur@dk0052tx:~$ ((sum=20+15))
+dhanur@dk0052tx:~$ echo $sum
+35
+dhanur@dk0052tx:~$ cat > test3
+# to add two numeric values
+((sum=20+15))
+# print the result
+echo $sum
+dhanur@dk0052tx:~$ sh test3
+
+dhanur@dk0052tx:~$ echo $sum
+35
+dhanur@dk0052tx:~$ vi test3
+dhanur@dk0052tx:~$ sh test3
+
+dhanur@dk0052tx:~$ cat > test4
+:'this is test4
+this is 2nd line'
+a="variable"
+echo $a
+dhanur@dk0052tx:~$ chmod 775 test4
+dhanur@dk0052tx:~$ ls -l test4
+-rwxrwxr-x 1 dhanur dhanur 55 Jan 18 13:33 test4
+dhanur@dk0052tx:~$ sh test4
+test4: 2: :this is test4
+this is 2nd line: not found
+variable
+dhanur@dk0052tx:~$ vi test4
+dhanur@dk0052tx:~$ sh test4
+test4: 1: this: not found
+test4: 2: this: not found
+variable
+dhanur@dk0052tx:~$ 
+

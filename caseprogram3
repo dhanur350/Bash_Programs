@@ -1,0 +1,15 @@
+echo enter any character 
+read char
+
+case $char in
+
+[aeiou]) echo the word begins with small case vowel
+;;
+[AEIOU]) echo the word begins with a Capital vowel
+;;
+[0-9]) echo The word ends with a digit
+;;
+???) echo you entered a three letter word
+;;
+
+esac

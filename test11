@@ -1,0 +1,5 @@
+Greeting="Hello Tony"
+echo Greeting
+echo $Greeting
+@ n = 5 + 5
+echo $n

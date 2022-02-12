@@ -1,0 +1,4 @@
+# to add two numeric values
+((sum=20+15))
+
+echo $sum

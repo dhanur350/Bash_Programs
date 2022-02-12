@@ -1,0 +1,226 @@
+dhanur@dk0052tx:~$ cat abc
+cat: abc: No such file or directory
+dhanur@dk0052tx:~$ cat > abc
+Linux mint is linux organizaiton
+page source linux.org
+^Z
+[1]+  Stopped                 cat > abc
+dhanur@dk0052tx:~$ cat abc
+Linux mint is linux organizaiton
+page source linux.org
+dhanur@dk0052tx:~$ ls
+abc      Desktop    Downloads  Pictures  snap       Videos
+Android  Documents  Music      Public    Templates
+dhanur@dk0052tx:~$ cp abc xyz
+dhanur@dk0052tx:~$ ls
+abc      Desktop    Downloads  Pictures  snap       Videos
+Android  Documents  Music      Public    Templates  xyz
+dhanur@dk0052tx:~$ ls -l
+total 48
+-rw-rw-r--  1 dhanur dhanur   55 Jan  5 15:23 abc
+drwxrwxr-x  3 dhanur dhanur 4096 Dec  1 00:33 Android
+drwxr-xr-x  2 dhanur dhanur 4096 Dec 27 18:47 Desktop
+drwxr-xr-x 12 dhanur dhanur 4096 Nov 30 23:36 Documents
+drwxr-xr-x  3 dhanur dhanur 4096 Dec 26 22:18 Downloads
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Music
+drwxr-xr-x  2 dhanur dhanur 4096 Dec  1 19:14 Pictures
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Public
+drwxr-xr-x  5 dhanur dhanur 4096 Dec  1 00:32 snap
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Templates
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Videos
+-rw-rw-r--  1 dhanur dhanur   55 Jan  5 15:24 xyz
+dhanur@dk0052tx:~$ cat xyz
+Linux mint is linux organizaiton
+page source linux.org
+dhanur@dk0052tx:~$ ls -l |
+> ^C
+dhanur@dk0052tx:~$ ls -l >xyz
+dhanur@dk0052tx:~$ cat xyz
+total 44
+-rw-rw-r--  1 dhanur dhanur   55 Jan  5 15:23 abc
+drwxrwxr-x  3 dhanur dhanur 4096 Dec  1 00:33 Android
+drwxr-xr-x  2 dhanur dhanur 4096 Dec 27 18:47 Desktop
+drwxr-xr-x 12 dhanur dhanur 4096 Nov 30 23:36 Documents
+drwxr-xr-x  3 dhanur dhanur 4096 Dec 26 22:18 Downloads
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Music
+drwxr-xr-x  2 dhanur dhanur 4096 Dec  1 19:14 Pictures
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Public
+drwxr-xr-x  5 dhanur dhanur 4096 Dec  1 00:32 snap
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Templates
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Videos
+-rw-rw-r--  1 dhanur dhanur    0 Jan  5 15:27 xyz
+dhanur@dk0052tx:~$ cat < xyz > pqr
+dhanur@dk0052tx:~$ cat  xyz > pqr
+dhanur@dk0052tx:~$ cat pqr
+total 44
+-rw-rw-r--  1 dhanur dhanur   55 Jan  5 15:23 abc
+drwxrwxr-x  3 dhanur dhanur 4096 Dec  1 00:33 Android
+drwxr-xr-x  2 dhanur dhanur 4096 Dec 27 18:47 Desktop
+drwxr-xr-x 12 dhanur dhanur 4096 Nov 30 23:36 Documents
+drwxr-xr-x  3 dhanur dhanur 4096 Dec 26 22:18 Downloads
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Music
+drwxr-xr-x  2 dhanur dhanur 4096 Dec  1 19:14 Pictures
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Public
+drwxr-xr-x  5 dhanur dhanur 4096 Dec  1 00:32 snap
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Templates
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Videos
+-rw-rw-r--  1 dhanur dhanur    0 Jan  5 15:27 xyz
+dhanur@dk0052tx:~$ cd aa
+bash: cd: aa: No such file or directory
+dhanur@dk0052tx:~$ md aa
+md: command not found
+dhanur@dk0052tx:~$ mkdir aa
+dhanur@dk0052tx:~$ ls
+aa   Android  Documents  Music     pqr     snap       Videos
+abc  Desktop  Downloads  Pictures  Public  Templates  xyz
+dhanur@dk0052tx:~$ ls -l
+total 56
+drwxrwxr-x  2 dhanur dhanur 4096 Jan  5 15:32 aa
+-rw-rw-r--  1 dhanur dhanur   55 Jan  5 15:23 abc
+drwxrwxr-x  3 dhanur dhanur 4096 Dec  1 00:33 Android
+drwxr-xr-x  2 dhanur dhanur 4096 Dec 27 18:47 Desktop
+drwxr-xr-x 12 dhanur dhanur 4096 Nov 30 23:36 Documents
+drwxr-xr-x  3 dhanur dhanur 4096 Dec 26 22:18 Downloads
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Music
+drwxr-xr-x  2 dhanur dhanur 4096 Dec  1 19:14 Pictures
+-rw-rw-r--  1 dhanur dhanur  649 Jan  5 15:29 pqr
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Public
+drwxr-xr-x  5 dhanur dhanur 4096 Dec  1 00:32 snap
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Templates
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Videos
+-rw-rw-r--  1 dhanur dhanur  649 Jan  5 15:27 xyz
+dhanur@dk0052tx:~$ cd aa
+dhanur@dk0052tx:~/aa$ ls
+dhanur@dk0052tx:~/aa$ cp /home/dhanur/xyz mint
+dhanur@dk0052tx:~/aa$ ls
+mint
+dhanur@dk0052tx:~/aa$ cat mint
+total 44
+-rw-rw-r--  1 dhanur dhanur   55 Jan  5 15:23 abc
+drwxrwxr-x  3 dhanur dhanur 4096 Dec  1 00:33 Android
+drwxr-xr-x  2 dhanur dhanur 4096 Dec 27 18:47 Desktop
+drwxr-xr-x 12 dhanur dhanur 4096 Nov 30 23:36 Documents
+drwxr-xr-x  3 dhanur dhanur 4096 Dec 26 22:18 Downloads
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Music
+drwxr-xr-x  2 dhanur dhanur 4096 Dec  1 19:14 Pictures
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Public
+drwxr-xr-x  5 dhanur dhanur 4096 Dec  1 00:32 snap
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Templates
+drwxr-xr-x  2 dhanur dhanur 4096 Nov 30 21:33 Videos
+-rw-rw-r--  1 dhanur dhanur    0 Jan  5 15:27 xyz
+dhanur@dk0052tx:~/aa$ cat > mint
+zodh 
+krodh
+amodh
+pramodh
+anodh
+^Z
+[2]+  Stopped                 cat > mint
+dhanur@dk0052tx:~/aa$ cat mint
+zodh 
+krodh
+amodh
+pramodh
+anodh
+dhanur@dk0052tx:~/aa$ sort mint
+amodh
+anodh
+krodh
+pramodh
+zodh 
+dhanur@dk0052tx:~/aa$ cat > mint
+yodh
+^Z
+[3]+  Stopped                 cat > mint
+dhanur@dk0052tx:~/aa$ cat > mint
+yodh singh 45 ludhiana punjab 1000
+rahul kumar 43 jalandhar haryana 2000 
+aman deep 33 kangra himachal pradesh 3000                                      
+pankaj middha 20 Kota Rajasthan 1500
+Karan Galhotra 21 Bans Rajasthan 1700
+Dikshit Thakur 22 Shimla Bilaspur 2100^Z
+[4]+  Stopped                 cat > mint
+dhanur@dk0052tx:~/aa$ cat mint
+yodh singh 45 ludhiana punjab 1000
+rahul kumar 43 jalandhar haryana 2000
+aman deep 33 kangra himachal pradesh 3000
+pankaj middha 20 Kota Rajasthan 1500
+Karan Galhotra 21 Bans Rajasthan 1700
+dhanur@dk0052tx:~/aa$ wc -lcw mint
+  5  31 190 mint
+dhanur@dk0052tx:~/aa$ sort mint
+aman deep 33 kangra himachal pradesh 3000
+Karan Galhotra 21 Bans Rajasthan 1700
+pankaj middha 20 Kota Rajasthan 1500
+rahul kumar 43 jalandhar haryana 2000
+yodh singh 45 ludhiana punjab 1000
+dhanur@dk0052tx:~/aa$ sort -o result print
+sort: cannot read: print: No such file or directory
+dhanur@dk0052tx:~/aa$ sort -o result mint
+dhanur@dk0052tx:~/aa$ sort -oresult mint
+dhanur@dk0052tx:~/aa$ ls
+mint  result
+dhanur@dk0052tx:~/aa$ cat result
+aman deep 33 kangra himachal pradesh 3000
+Karan Galhotra 21 Bans Rajasthan 1700
+pankaj middha 20 Kota Rajasthan 1500
+rahul kumar 43 jalandhar haryana 2000
+yodh singh 45 ludhiana punjab 1000
+dhanur@dk0052tx:~/aa$ cat > mint1
+dikshit singh 21 shimla bilaspur 2100
+dhanur@dk0052tx:~/aa$ sort -m result mint1
+aman deep 33 kangra himachal pradesh 3000
+dikshit singh 21 shimla bilaspur 2100
+Karan Galhotra 21 Bans Rajasthan 1700
+pankaj middha 20 Kota Rajasthan 1500
+rahul kumar 43 jalandhar haryana 2000
+yodh singh 45 ludhiana punjab 1000
+dhanur@dk0052tx:~/aa$ cat result
+aman deep 33 kangra himachal pradesh 3000
+Karan Galhotra 21 Bans Rajasthan 1700
+pankaj middha 20 Kota Rajasthan 1500
+rahul kumar 43 jalandhar haryana 2000
+yodh singh 45 ludhiana punjab 1000
+dhanur@dk0052tx:~/aa$ cat mint1
+dikshit singh 21 shimla bilaspur 2100
+dhanur@dk0052tx:~/aa$ sort -m result mint1 > mint2
+dhanur@dk0052tx:~/aa$ cat mint2
+aman deep 33 kangra himachal pradesh 3000
+dikshit singh 21 shimla bilaspur 2100
+Karan Galhotra 21 Bans Rajasthan 1700
+pankaj middha 20 Kota Rajasthan 1500
+rahul kumar 43 jalandhar haryana 2000
+yodh singh 45 ludhiana punjab 1000
+dhanur@dk0052tx:~/aa$ sort +1 mint2
+aman deep 33 kangra himachal pradesh 3000
+Karan Galhotra 21 Bans Rajasthan 1700
+rahul kumar 43 jalandhar haryana 2000
+pankaj middha 20 Kota Rajasthan 1500
+dikshit singh 21 shimla bilaspur 2100
+yodh singh 45 ludhiana punjab 1000
+dhanur@dk0052tx:~/aa$ sort +2 -n mint2
+pankaj middha 20 Kota Rajasthan 1500
+dikshit singh 21 shimla bilaspur 2100
+Karan Galhotra 21 Bans Rajasthan 1700
+aman deep 33 kangra himachal pradesh 3000
+rahul kumar 43 jalandhar haryana 2000
+yodh singh 45 ludhiana punjab 1000
+dhanur@dk0052tx:~/aa$ cut -f 2,5
+^C
+dhanur@dk0052tx:~/aa$ cut -f 2,5 mint2
+aman deep 33 kangra himachal pradesh 3000
+dikshit singh 21 shimla bilaspur 2100
+Karan Galhotra 21 Bans Rajasthan 1700
+pankaj middha 20 Kota Rajasthan 1500
+rahul kumar 43 jalandhar haryana 2000
+yodh singh 45 ludhiana punjab 1000
+dhanur@dk0052tx:~/aa$ cut -f 2-5 mint2
+aman deep 33 kangra himachal pradesh 3000
+dikshit singh 21 shimla bilaspur 2100
+Karan Galhotra 21 Bans Rajasthan 1700
+pankaj middha 20 Kota Rajasthan 1500
+rahul kumar 43 jalandhar haryana 2000
+yodh singh 45 ludhiana punjab 1000
+dhanur@dk0052tx:~/aa$ man cut
+dhanur@dk0052tx:~/aa$ 
+

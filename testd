@@ -1,0 +1,4 @@
+echo "Hello My Dear Students"
+echo "printing text line with new line"
+echo -n "printing text without new line"
+echo -e "\n removing \t backslash"

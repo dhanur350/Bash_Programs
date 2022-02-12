@@ -1,0 +1,333 @@
+dhanur@dk0052tx:~$ cat > test16
+echo enter basic salary
+read bs
+if [ $bs -lt 1500 ]
+then
+hra=`echo $bs \* 10/ 100 | bc`
+da=`echo $bs \* 98 / 100  | bc`
+fi
+gs=`echo $bs + $hra + $da | bc`
+echo gross salary is = Rs $gs
+dhanur@dk0052tx:~$ chmod 775 test16
+dhanur@dk0052tx:~$ sh test16
+enter basic salary
+12000
+(standard_in) 1: syntax error
+gross salary is = Rs
+dhanur@dk0052tx:~$ vi test16
+dhanur@dk0052tx:~$ sh test16
+enter basic salary
+1000
+gross salary is = Rs 2080
+dhanur@dk0052tx:~$ cat > test17.sh
+str1='good'
+str1='bad'
+str3=
+[ $str1 = $str2 ]
+echo $?
+dhanur@dk0052tx:~$ sh test17
+sh: 0: Can't open test17
+dhanur@dk0052tx:~$ chmod 775 test17
+chmod: cannot access 'test17': No such file or directory
+dhanur@dk0052tx:~$ chmod 775 test17.sh
+dhanur@dk0052tx:~$ cat > test17
+str1='good'
+str1='bad'
+str3=
+[ $str1 = $str2 ]
+echo $?
+[ -z "$str3" ]
+echo $?
+[ -z "$str3" ]
+echo $?
+[ "$str3" ]
+echo $?
+dhanur@dk0052tx:~$ chmod 775 test17
+dhanur@dk0052tx:~$ sh test17
+test17: 4: [: =: argument expected
+2
+0
+0
+1
+dhanur@dk0052tx:~$ vi test17
+dhanur@dk0052tx:~$ vi test17
+dhanur@dk0052tx:~$ sh test17
+test17: 4: [: =: argument expected
+2
+test17: 6: [: good: unexpected operator
+2
+0
+0
+1
+dhanur@dk0052tx:~$ vi test17
+dhanur@dk0052tx:~$ sh test17
+test17: 5: [: =: argument expected
+2
+test17: 7: [: good: unexpected operator
+2
+0
+0
+1
+dhanur@dk0052tx:~$ vi test17
+dhanur@dk0052tx:~$ cat test17
+str1='good'
+str1='good'
+str3=
+
+[ $str1 = $str2 ]
+echo $?
+[ $str1 =! $str2 ]
+echo $?
+[ -z "$str3" ]
+echo $?
+[ -z "$str3" ]
+echo $?
+[ "$str3" ]
+echo $?
+dhanur@dk0052tx:~$ vi test17
+dhanur@dk0052tx:~$ sh test17
+test17: 5: [: =: argument expected
+2
+test17: 7: [: good: unexpected operator
+2
+0
+0
+1
+dhanur@dk0052tx:~$ vi test17
+dhanur@dk0052tx:~$ sh test17
+0
+test17: 7: [: good: unexpected operator
+2
+0
+0
+1
+dhanur@dk0052tx:~$ cat test17
+str1='good'
+str2='good'
+str3=
+
+[ $str1 = $str2 ]
+echo $?
+[ $str1 =! $str2 ]
+echo $?
+[ -z "$str3" ]
+echo $?
+[ -z "$str3" ]
+echo $?
+[ "$str3" ]
+echo $?
+dhanur@dk0052tx:~$ vi test17
+dhanur@dk0052tx:~$ sh test17
+0
+test17: 7: [: good: unexpected operator
+2
+0
+0
+1
+dhanur@dk0052tx:~$ cat test17
+str1="good"
+str2="good"
+str3=
+
+[ $str1 = $str2 ]
+echo $?
+[ $str1 =! $str2 ]
+echo $?
+[ -z "$str3" ]
+echo $?
+[ -z "$str3" ]
+echo $?
+[ "$str3" ]
+echo $?
+dhanur@dk0052tx:~$ vi test17
+dhanur@dk0052tx:~$ sh test17
+0
+test17: 7: [: Good: unexpected operator
+2
+0
+0
+1
+dhanur@dk0052tx:~$ vi test17
+dhanur@dk0052tx:~$ sh test17
+0
+test17: 7: [: Good: unexpected operator
+2
+0
+0
+0
+1
+dhanur@dk0052tx:~$ cat test18
+cat: test18: No such file or directory
+dhanur@dk0052tx:~$ cat > test18
+str1="Good Morning"
+str2="Good Bye"
+[ $str1 = $str2 ]
+echo $?
+dhanur@dk0052tx:~$ chmod 775 test18
+dhanur@dk0052tx:~$ sh test18
+test18: 3: [: Good: unexpected operator
+2
+dhanur@dk0052tx:~$ vi test18
+dhanur@dk0052tx:~$ sh test18
+1
+dhanur@dk0052tx:~$ cat test18
+str1="Good Morning"
+str2="Good Bye"
+[ "$str1" = "$str2" ]
+echo $?
+dhanur@dk0052tx:~$ cat > test19
+echo enter either 1 or 2
+read i
+if [ $i -eq 1 ]
+then
+echo you would go to heaven
+else
+if [ $i -eq 2 ]
+then
+echo hell was created in mind
+else
+echo how about earth
+fi
+fi
+dhanur@dk0052tx:~$ chmod 775 test19
+dhanur@dk0052tx:~$ sh test19
+enter either 1 or 2
+1
+you would go to heaven
+dhanur@dk0052tx:~$ sh test19
+enter either 1 or 2
+2
+hell was created in mind
+dhanur@dk0052tx:~$ sh test19
+enter either 1 or 2
+3
+how about earth
+dhanur@dk0052tx:~$ cat > test20
+echo "Enter marks in five subjects \c"
+read m1 m2 m3 m4 m5
+per='expr \ ( $m1 + $m2 + $m3 + $m4 + $m5 \ )
+if [ per -ge 60 ]
+then 
+echo first division
+fi
+if [ per >= 50 -a per < 60 ]
+then 
+echo second division
+fi
+if [ per >= 40 -a per < 50 ]
+then 
+echo third division
+fi
+if [ per < 40 ]
+then
+echo fail
+fi
+
+dhanur@dk0052tx:~$ chmod 775 test20
+dhanur@dk0052tx:~$ sh test20
+Enter marks in five subjects 1 2 3 4 5
+test20: 21: Syntax error: Unterminated quoted string
+dhanur@dk0052tx:~$ sh test20
+Enter marks in five subjects 12345
+test20: 21: Syntax error: Unterminated quoted string
+dhanur@dk0052tx:~$ sh test20
+Enter marks in five subjects 1 2 3 4 5
+test20: 21: Syntax error: Unterminated quoted string
+dhanur@dk0052tx:~$ vi test20
+dhanur@dk0052tx:~$ sh test20
+Enter marks in five subjects 1 2 3 4 5
+test20: 21: Syntax error: Unterminated quoted string
+dhanur@dk0052tx:~$ vi test20
+dhanur@dk0052tx:~$ sh test20
+Enter marks in five subjects 1 2 3 4 5
+test20: 4: [: Illegal number: per
+test20: 8: cannot open 60: No such file
+test20: 12: cannot open 50: No such file
+test20: 16: cannot open 40: No such file
+dhanur@dk0052tx:~$ vi test20
+dhanur@dk0052tx:~$ sh test20
+Enter marks in five subjects 1 2 3 4 5
+test20: 4: if[: not found
+test20: 5: Syntax error: "then" unexpected
+dhanur@dk0052tx:~$ vi test20
+dhanur@dk0052tx:~$ sh test20
+Enter marks in five subjects 1 2 3 4 5
+test20: 4: if[: not found
+test20: 5: Syntax error: "then" unexpected
+dhanur@dk0052tx:~$ vi test20
+dhanur@dk0052tx:~$ cp test20 test21
+dhanur@dk0052tx:~$ vi test20
+dhanur@dk0052tx:~$ sh test20
+Enter marks in five subjects 1 2 3 4 5
+expr \( $m1 + $m2 + $m3 + $m4 + $m5 \) / 5
+dhanur@dk0052tx:~$ vi test20
+dhanur@dk0052tx:~$ sh test20
+Enter marks in five subjects 1 2 3 4 5
+3
+dhanur@dk0052tx:~$ vi test21
+dhanur@dk0052tx:~$ sh test20
+Enter marks in five subjects 1 2 3 4 5
+3
+dhanur@dk0052tx:~$ chmod 775 test21
+dhanur@dk0052tx:~$ sh test21
+Enter marks in five subjects 1 2 3 4 5
+test21: 4: if[: not found
+test21: 5: Syntax error: "then" unexpected
+dhanur@dk0052tx:~$ vi test21
+dhanur@dk0052tx:~$ sh test21
+Enter marks in five subjects 1 2 3 4 5
+test21: 4: [: Illegal number: per
+test21: 8: cannot open 60: No such file
+test21: 12: cannot open 50: No such file
+test21: 16: cannot open 40: No such file
+dhanur@dk0052tx:~$ vi test21
+dhanur@dk0052tx:~$ sh test21
+Enter marks in five subjects 1 2 3 4 5
+test21: 8: cannot open 60: No such file
+test21: 12: cannot open 50: No such file
+test21: 16: cannot open 40: No such file
+dhanur@dk0052tx:~$ vi test21
+dhanur@dk0052tx:~$ sh test21
+Enter marks in five subjects 1 2 3 4 5
+test21: 4: if[: not found
+test21: 5: Syntax error: "then" unexpected
+dhanur@dk0052tx:~$ man if
+No manual entry for if
+dhanur@dk0052tx:~$ vi test21
+dhanur@dk0052tx:~$ sh test21
+Enter marks in five subjects 1 2 3 4 5
+3
+test21: 5: if[: not found
+test21: 6: Syntax error: "then" unexpected
+dhanur@dk0052tx:~$ vi test21
+dhanur@dk0052tx:~$ cat > test22
+echo "Enter marks in five subjects \c"
+read m1 m2 m3 m4 m5
+per=`expr \( $m1 + $m2 + $m3 + $m4 + $m5 \) / 5`
+echo $per
+if[ $per -ge 60 ]
+then
+echo first division
+fi
+dhanur@dk0052tx:~$ chmod 775 test22
+dhanur@dk0052tx:~$ sh test22
+Enter marks in five subjects 1 2 3 4 5
+3
+test22: 5: if[: not found
+test22: 6: Syntax error: "then" unexpected
+dhanur@dk0052tx:~$ vi test22
+dhanur@dk0052tx:~$ sh test22
+Enter marks in five subjects 1 2 3 4 5
+3
+test22: 5: if[3: not found
+test22: 6: Syntax error: "then" unexpected
+dhanur@dk0052tx:~$ vi test22
+dhanur@dk0052tx:~$ vi test22
+dhanur@dk0052tx:~$ sh test22
+Enter marks in five subjects 1 2 3 4 5
+3
+test22: 5: if[3: not found
+first division
+test22: 8: Syntax error: "fi" unexpected
+dhanur@dk0052tx:~$ 
+
